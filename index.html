@@ -1,7 +1,12 @@
-<html>
-<head>
-<meta http-equiv="refresh" content="0; url=http://www.example.com/a" />
-<meta http-equiv="refresh" content="0; url=http://www.example.com/b" />
-<meta http-equiv="refresh" content="0; url=http://www.example.com/c" />
-</head>
-</html>
+<script type="text/javascript">
+
+var urls = new Array();
+urls[0] = "http://learninginhand.com";
+urls[1] = "http://learninginhand.com/about";
+
+
+var random = Math.floor(Math.random()*urls.length);
+
+window.location = urls[random];
+
+</script>
