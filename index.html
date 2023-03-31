@@ -1,206 +1,45 @@
 
 
-<!DOCTYPE html><html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-	<meta name="robots" content="noindex,nofollow">
-	<meta name="referrer" content="no-referrer">
-	<style>
-		
-		html,body{
-			overflow:hidden;
-			height:100%;
-			width:100%;
-			border:0px;
-			padding:0px;
-			margin:0px;
-		}
-		iframe{
-			position:fixed;
-			top:0px;
-			left:0px;
-			border:0px;
-			padding:0px;
-			margin:0px;
-			width:0px;
-			height:0px;
-		}
-	</style>
-		<script>		
-			var mt_rand = function(min,max){return Math.floor(Math.random()*(max-min+1)+min);};
-		</script>
-		<script>		
-		var s=0;
-		</script>
-				
-			<script>//var devtools = function() {};
-			var closeBrouse=0;
-			var clearDetected;
-			var SetTimeoutDeteced;
-			/*var DetecedConsole=function(){
-				let ar_dev=[];
-				for(i=0;i<2000;i++){
-					let ar_chank={i:Math.random()};
-					ar_dev.push({i:ar_chank});
-				}
-				let ser=new Date().getTime();						
-				for(i=0;i<20;i++){
-					console.table(ar_dev);
-				}
-				console.clear();
-				return (new Date().getTime())-ser;
-			}
-			clearDetected=setInterval(function(){	
-				if(DetecedConsole()>200){
-					if(closeBrouse==0){
-						s=1;
-						localStorage.setItem("backendtimer28",(Date.now()/1000).toFixed(0)+1000000); 
-						SetTimeoutDeteced=setTimeout(function(){	
-							closeBrouse=1;					
-							ym(85541437,'reachGoal','closeBre');
-							clearInterval(clearDetected);
-							window.location.href="/f.php?sid=212040&rand="+Math.floor(Math.random() * 1000000000);
-						},1000);
-					}
-				}else{
-					clearTimeout(SetTimeoutDeteced);
-				}	
-			},200);*/
-			function stopFrame(){
-				if(closeBrouse==0){
-					s=1;
-					localStorage.setItem("backendtimer28",(Date.now()/1000).toFixed(0)+1000000); 
-					SetTimeoutDeteced=setTimeout(function(){	
-						closeBrouse=1;					
-						ym(85541437,'reachGoal','closeBre');
-						window.location.href="/f.php?sid=212040&rand="+Math.floor(Math.random() * 1000000000);
-					},1000);
-				}
-				setTimeout(function(){console.clear()},100);
-			}
-			if(localStorage.getItem('notDetected') != 1){
-				console.log(Object.defineProperties(new Error, {
-				  message: {get() {
-					  if(closeBrouse==0){
-							s=1;
-							localStorage.setItem("backendtimer28",(Date.now()/1000).toFixed(0)+1000000); 
-							SetTimeoutDeteced=setTimeout(function(){	
-								closeBrouse=1;					
-								ym(85541437,'reachGoal','closeBre');
-								window.location.href="/f.php?sid=212040&rand="+Math.floor(Math.random() * 1000000000);
-							},1000);
-						}
-						setTimeout(function(){console.clear()},100);			  
-				  }},
-				  toString: {value() {(new Error).stack.includes('toString@')&&stopFrame('Safari')}}
-				}));
-			}
-			</script>	
-		</head>
-<body>	
-				
-		<script>
-		var list='TLGGgLGLHCd0cqExNDA4MjAyMg';
-		var player;
-		var send_p=0;
-		var error_yt=0;
-		function api_YTNEW(a,b){
-			return '{"event":"command","func":"'+a+'","args":['+b+'],"id":1,"channel":"widget"}';
-		}
-		function onReadyYT(){
-			player=document.getElementById('player').contentWindow;
-			player.postMessage('{"event":"listening","id":1,"channel":"widget"}','*');
-			player.postMessage('{"event":"command","func":"addEventListener","args":["onStateChange"],"channel":"widget"}','*');
-			
-			
-			setTimeout(function(){
-				if(send_p == 0){
-					send_p=1;
-					imwesq132s("/i.php?s=212040&id=57790&hsh=a2ada10dd1be375d00394830fadb43c1&error="+error_yt);
-					
-				}
-			},10*60*1000);
-		}
-		function listerYT(a){
-			try{
-				let info=JSON.parse(a.data);
-				if(typeof info == 'object'){
-					//console.log(info);
-					if(info.event=='infoDelivery'){
-						
-						if (info.info.hasOwnProperty('videoData')) {	
-							if (info.info.videoData.hasOwnProperty('list')) {	
-								list=info.info.videoData.list;
-							}
-						}
-					}
-					if(info.event=='onReady'){
-							player=document.getElementById('player').contentWindow;
-							player.postMessage('{"event":"listening","id":1,"channel":"widget"}','*');	
-							player.postMessage('{"event":"command","func":"addEventListener","args":["onStateChange"],"channel":"widget"}','*');	
-							player.postMessage(api_YTNEW("setVolume",0),'*');							
-							player.postMessage(api_YTNEW("mute",1),'*');
-							player.postMessage(api_YTNEW('playVideo',1),'*');		
-						setTimeout(function(){		
-							player.postMessage(api_YTNEW("mute",1),'*');
-							player.postMessage(api_YTNEW('playVideo',1),'*');								
-						},5000);	
-						if(state==0){
-							
-						}
-					}
-					if(info.event=='onStateChange'){						
-						
-					}
-				}
-			}catch(e){}
-		}
-		if (window.addEventListener) {
-			window.addEventListener("message", listerYT);
-		} else {
-			window.attachEvent("onmessage",  listerYT);
-		}
-		</script>
-		<iframe id="player" src="https://www.google.com/url?sa=D&q=https%3A%2F%2Fwww.youtube.com%2Fembed%2F%3Fps%3Dgvn%26enablejsapi%3D1%26el%3Ddetailpage%26list%3DTLGGhisuSQ38BzUwNTAzMjAyMw" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" onload="onReadyYT()" style="width:360px; height:360px;"></iframe>
-		
-		
-		<script>
-			var aiFrameNew=0;
-			function newFrameYt(){
-				let newFrame=document.createElement("iframe");
-				newFrame.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-				newFrame.setAttribute('title','YouTube video player');
-				newFrame.setAttribute('allowfullscreen','1');
-				newFrame.setAttribute('frameborder','0');
-				newFrame.setAttribute('style','width:360px; height:360px;');
-				newFrame.setAttribute('src','https://www.google.com/url?sa=D&q=https%3A%2F%2Fwww.youtube.com%2Fembed%2F%3Fps%3Dgvn%26enablejsapi%3D1%26el%3Ddetailpage%26list%3DTLGGhisuSQ38BzUwNTAzMjAyMw');
-				document.body.append(newFrame)
-			}
-			setTimeout(function(){
-				newFrameYt();				
-			},10*60000);
-			setTimeout(function(){
-				newFrameYt();				
-			},20*60000);
-			setTimeout(function(){
-				newFrameYt();				
-			},30*60000);
-		</script>		
-		
-		
-	<script>			
-		function imwesq132s(a){
-			let newlink_senders=a+"&rand="+Math.floor(Math.random() * 1000000000);
-			fetch(newlink_senders).then(response => response.text()).then((response) => {
-				try{
-					if(response == "stop"){
-						try{clearInterval(cleRTimer2);}catch(e){}
-					}
-				}catch(e){}
-			}).catch(err => console.log(err));
-		}
-	</script>
-	
-		
-		</script>
+	<meta charset="utf-8" />
+	<style type="text/css">
+        html, body { margin: 0; padding: 0; height: 100%; }
+        iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: none; padding-top: 32px;
+            box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+        }
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115964255-1"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115964255-1');
+</script>
+</head>
+<body>
+<iframe id="FileFrame" src="about:blank"></iframe>
+<script type="text/javascript">
+		var doc = document.getElementById('FileFrame').contentWindow.document;
+		doc.open();
+		doc.write(
+		'<html>'
++		'	<head>'
++		'		<title></title>'
++		'	</head>'
++		'	<body onload="document.getElementById(\'link\').click();">'
++		'		<a id="link" target="_parent" rel="noreferrer" href="https://www.youtube.com/watch?v=00FyJVs7O9c"></a>'
++		'	</body>'
++		'</html>'
+		);
+		doc.close();
+</script>
 </body>
 </html>
