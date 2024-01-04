@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" itemscope itemtype="http://schema.org/WebPage">
+<body>
+</div>
+<div class="rounded-corners">
+<div id="Hint" class="hint"></div>
+<div id="playerif" style="position: relative; ">
+	<div id="infoi" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 10;"></div>
+	<div id="fbvideo" class="fb-video disable-click width-500 height-200" data-href="https://www.facebook.com/reel/222607150892903" data-width="400" data-show-text="false" data-allowfullscreen="false" data-autoplay="true" data-show-captions="false">
+	</div>
+</div>
+<br />
+<div id="start1"><br /><a onclick="startvideo()" href="#"></a></div>
+<div id="cpcdiv" class="height-100 width-100p" style="display:none; z-index: 15;"></div>
+
+<script type="text/javascript">
+var length = 21;
+var stopcount = false;
+var getcredits;  
+var brojac = -1;
+var timprovplay;
+var videoStarted = false;
+var watchingFinished = false;
+var my_video_player = {};
+my_video_player.subscribe = (a,b) => {};
+my_video_player.play = () => {};
+my_video_player.seek = () => {};
+
+window.fbAsyncInit = function() {
+	FB.init({
+		appId      : '{your-app-id}',
+		xfbml      : true,
+		version    : 'v2.5'
+	});
+
+	// Get Embedded Video Player API Instance
+
+	FB.Event.subscribe('xfbml.ready', function(msg) {
+		if (msg.type === 'video') {
+		            msg.instance.play();
+
+			my_video_player = msg.instance;
+		}
+	});
+};
+
+(function(d, s, id){
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	 
+function startvideo() {
+	var myEventStart = my_video_player.subscribe('startedPlaying', function(e) {
+		videoStarted = true;
+		timprovplay = setTimeout(counter, 1000);
+		$("#start1").html("");
+	});
+	var myEventPause = my_video_player.subscribe('paused', function(e) {
+		// clearTimeout(timprovplay);
+		// RePlayVideo
+		$("#start1").html('<br /><a onclick="startvideo()" href="#">Resume Video</a>');
+		//playlink();
+		//my_video_player.play();
+		// END RePlayVideo
+	});
+	var myEventPause = my_video_player.subscribe('finishedPlaying', function(e) {
+		my_video_player.seek(0);
+		my_video_player.play();
+	});	
+
+	//document.getElementById("start1").style.display='hidden';
+	playlink();
+	my_video_player.play();
+};
+	 
+function counter() {
+	if (!watchingFinished) {
+		if (!stopcount)
+		{		 
+			clearTimeout(timprovplay);
+			if (brojac > length) {
+				brojac=0;
+				watchingFinished = true;
+				prepareCaptcha();
+			}
+			else {
+				timprovplay = setTimeout(counter, 1000);
+				brojac = brojac + 1;
+				document.getElementById("played").innerHTML = Math.min(brojac,length);
+			}
+		}
+	}
+}
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+	setTimeout(function(){ startvideo(); }, 2000);
+});
+
+
+function prepareCaptcha ()   {
+	window.addEventListener("message", function(event) {
+		if (event.data>0) {
+			$("#11").html('You have earned 1 credits!');
+			$("#cpcdiv").html('');
+			$("#cpcdiv").hide();
+			parent.window.opener.postMessage('+1;' + event.data, "*");
+		} else if (event.data==-1) {
+			$("#11").html('<br /><br />You have clicked on the wrong image pair.<br />To successfully complete the challenge, please click on the repeated (mirrored) image.');
+			$("#cpcdiv").html('');
+			$("#cpcdiv").hide();
+		} else if (event.data==0){
+			$("#11").html('<br /><br />An error occurred, please try again.');
+			$("#cpcdiv").html('');
+			$("#cpcdiv").hide();
+		} 
+	});
+
+	$("#10").html('');
+	$("#11").html('');
+	$("#cpcdiv").html("<p class='bold f-size-13'>To successfully complete the challenge, please click on the repeated (mirrored) image.</p><iframe class='height-150 width-100p' src='https://www.like4like.org/user/captcha-page-fb.php?user_id=30008400580073307020174017603361&idz=0358733&ctrl=32cb5eb1c06eada2199ea4ad3a671ce0&trackerparam=dfflvokm09bdok2r3655pd4uu8'></iframe>");
+	$("#cpcdiv").show();
+}
+
+function upisilink()
+{	  
+	document.getElementById("Hint").style.display='hidden';
+	var response = '0358733';
+	var cpc = '1';
+	var userid = '30008400580073307020174017603361';
+	var idlinka = '337853031177583';
+	var ctrl = '32cb5eb1c06eada2199ea4ad3a671ce0';
+	var dataString = "idzadatka=" + response + "&idclana=" + userid + "&ctrl=" + ctrl;	
+	$.ajax({
+	  	type: "POST",
+	  	url: "fbv_add.php",
+	  	data: dataString,
+	  	beforeSend: function(x) {
+	        if(x && x.overrideMimeType) {
+	            x.overrideMimeType("application/json;charset=UTF-8");
+        	}
+	    },
+	  	dataType: "json",
+		error: function (request, status, error) {
+			//alert(request.responseText);
+		},
+	  	success:function(response){
+		  	var linkovi = (typeof response.j) == 'string' ? eval('(' + response.j + ')') : response.j;
+			$("#Hint").html("");
+			document.getElementById("Hint").style.display='hidden';	
+			$("#10").html("");
+			document.getElementById("10").style.display='hidden';			  
+	     	if (linkovi[0].uradio!=0)
+				{		
+					$("#11").html('You have earned ' + cpc + ' credits!');
+				}
+			else {
+				$("#11").html('<br /><br />You have clicked on the wrong image pair.<br />To successfully complete the challenge, please click on the repeated (mirrored) image.');
+			}				
+			$("#cpcdiv").hide();
+	  	}
+	});	
+	//document.getElementById(response).style.visibility = "visible";
+}   
+
+function playlink()
+{	  
+	  var response = '0358733';
+	  var userid = '30008400580073307020174017603361';
+	  var ctrl = '32cb5eb1c06eada2199ea4ad3a671ce0';
+	  var dataString = "idzadatka=" + response + "&idclana=" + userid + "&ctrl=" + ctrl;;			
+	  $.ajax({
+	  type: "POST",
+	  url: "playlink-fbv_add.php",
+	  data: dataString,
+	  beforeSend: function(x) {
+	        if(x && x.overrideMimeType) {
+	            x.overrideMimeType("application/json;charset=UTF-8");
+        }
+	    },
+	  dataType: "json",
+	error: function (request, status, error) {
+	  //alert(request.responseText);
+	},
+	  success:function(response){
+	  var linkovi = (typeof response.j) == 'string' ? eval('(' + response.j + ')') : response.j;
+	  if (linkovi[0].uradio==1)
+				{
+						//alert ("uspesno play");
+				}	
+	  }
+	});	
+
+}  
+
+	</script>
+<br/><br /> <div id="32466" style="visibility:hidden"></div>
+
+    </div></div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123638343-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123638343-1');
+</script>
