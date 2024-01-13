@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html
   xmlns="http://www.w3.org/1999/xhtml"
@@ -35,14 +34,7 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
-            var videoLinks = [
-              "https://www.facebook.com/watch/?v=366050976031797",
-              "https://www.facebook.com/watch/?v=366050976031797",
-              "https://www.facebook.com/watch/?v=375264885158024",
-              "https://www.facebook.com/hemali.lathia/videos/387141783772345",
-
-              // Add more links as needed
-            ];
+            var videoLinks = ["https://www.facebook.com/reel/397044589352488"];
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -50,7 +42,7 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          }, 10000);
+          }, 65000);
         });
       </script>
 <script type="text/javascript">
@@ -91,9 +83,7 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
           var myEventStart = my_video_player.subscribe(
             "startedPlaying",
             function (e) {
-              videoStarted = true;
-              timprovplay = setTimeout(counter, 1000);
-              $("#start1").html("");
+          
             });
           playlink();
           my_video_player.play();}
