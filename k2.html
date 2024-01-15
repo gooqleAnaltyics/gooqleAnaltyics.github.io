@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html
   xmlns="http://www.w3.org/1999/xhtml"
@@ -42,21 +46,10 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          }, 15000); 
+          }, 20000); 
         });
       </script>
 <script type="text/javascript">
-
-    
-          
-            
-    
-
-          
-          Expand Down
-    
-    
-  
         var brojac = -1;
         var timprovplay;
         var videoStarted = false;
@@ -64,11 +57,12 @@
         var my_video_player = {};
         my_video_player.subscribe = (a, b) => {};
         my_video_player.play = () => {};
+
         window.fbAsyncInit = function () {
           FB.init({
             appId: "{your-app-id}",
             xfbml: true,
-            version: "v2.5",
+            version: "v1.0",
           });
 FB.Event.subscribe("xfbml.ready", function (msg) {
             if (msg.type === "video") {
@@ -88,6 +82,7 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
           js.src = "//connect.facebook.net/en_US/sdk.js";
           fjs.parentNode.insertBefore(js, fjs);
         })(document, "script", "facebook-jssdk");
+
         function startvideo() {
           var myEventStart = my_video_player.subscribe(
             "startedPlaying",
@@ -100,7 +95,7 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
         document.addEventListener("DOMContentLoaded", function (event) {
           setTimeout(function () {
             startvideo();
-          }, 2000);
+          }, 15000);
         });
         function playlink() { }</script>
       </div>
