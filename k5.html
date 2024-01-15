@@ -1,15 +1,11 @@
-
-
-
-
 <!DOCTYPE html>
 <html
   xmlns="http://www.w3.org/1999/xhtml"
   xml:lang="en"
   lang="en"
   itemscope
-  itemtype="http://schema.org/WebPage"
-><body>
+  itemtype="http://schema.org/WebPage">
+  <body>
       <div id="playerif" style="position: relative">
         <div
           id="infoi"
@@ -38,7 +34,7 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
-            var videoLinks = ["https://www.facebook.com/reel/397044589352488"];
+            var videoLinks = ["https://www.facebook.com/reel/391509013376708"];
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -46,7 +42,7 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          }, 10000); 
+          }, 15000); 
         });
       </script>
 <script type="text/javascript">
