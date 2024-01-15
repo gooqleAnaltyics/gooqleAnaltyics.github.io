@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html
   xmlns="http://www.w3.org/1999/xhtml"
+
+    
+          
+            
+    
+
+          
+          Expand Down
+          
+            
+    
+
+          
+          Expand Up
+    
+    @@ -37,15 +34,15 @@
+  
   xml:lang="en"
   lang="en"
   itemscope
@@ -34,7 +51,7 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
-            var videoLinks = ["https://www.facebook.com/reel/1068000247736620"];
+            var videoLinks = ["https://www.facebook.com/reel/387945606951213"];
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -42,10 +59,21 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          }, 16000);
+          }, 15000);
         });
       </script>
 <script type="text/javascript">
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
         var brojac = -1;
         var timprovplay;
         var videoStarted = false;
@@ -53,7 +81,6 @@
         var my_video_player = {};
         my_video_player.subscribe = (a, b) => {};
         my_video_player.play = () => {};
-
         window.fbAsyncInit = function () {
           FB.init({
             appId: "{your-app-id}",
@@ -78,7 +105,6 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
           js.src = "//connect.facebook.net/en_US/sdk.js";
           fjs.parentNode.insertBefore(js, fjs);
         })(document, "script", "facebook-jssdk");
-
         function startvideo() {
           var myEventStart = my_video_player.subscribe(
             "startedPlaying",
