@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html
   xmlns="http://www.w3.org/1999/xhtml"
@@ -19,9 +15,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 10;
-          "
-        ></div>
+            z-index: 10;"></div>
         <div
           id="fbvideo"
           class="fb-video disable-click width-500 height-200"
@@ -38,7 +32,7 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
-            var videoLinks = ["https://www.facebook.com/reel/387945606951213"];
+            var videoLinks = ["https://www.facebook.com/reel/409328128158407"];
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -46,7 +40,7 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          }, 15000); 
+          }, 45000); 
         });
       </script>
 <script type="text/javascript">
