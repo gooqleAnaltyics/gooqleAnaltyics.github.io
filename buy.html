@@ -1,11 +1,13 @@
 
+
 <!DOCTYPE html>
 <html
   xmlns="http://www.w3.org/1999/xhtml"
   xml:lang="en"
   lang="en"
   itemscope
-  itemtype="http://schema.org/WebPage"><body>
+  itemtype="http://schema.org/WebPage"
+><body>
       <div id="playerif" style="position: relative">
         <div
           id="infoi"
@@ -21,10 +23,10 @@
           class="fb-video disable-click width-500 height-200"
           data-href=""
           data-width="400"
-          data-show-text="true"
-          data-allowfullscreen="true"
+          data-show-text="false"
+          data-allowfullscreen="false"
           data-autoplay="true"
-          data-show-captions="true"
+          data-show-captions="false"
         ></div>
       </div>
       <br />
@@ -33,6 +35,7 @@
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
             var videoLinks = ["https://www.facebook.com/reel/7250390255017092"];
+            
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -89,7 +92,7 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
         document.addEventListener("DOMContentLoaded", function (event) {
           setTimeout(function () {
             startvideo();
-          }, 2000);
+          }, 1000);
         });
         function playlink() { }</script>
       </div>
