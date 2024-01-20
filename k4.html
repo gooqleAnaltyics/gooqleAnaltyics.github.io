@@ -1,15 +1,28 @@
+
+
+<!DOCTYPE html>
 <html
   xmlns="http://www.w3.org/1999/xhtml"
   xml:lang="en"
   lang="en"
   itemscope
-  itemtype="http://schema.org/WebPage">
-  <body>
-    <div
+  itemtype="http://schema.org/WebPage"
+><body>
+      <div id="playerif" style="position: relative">
+        <div
+          id="infoi"
+          style="
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;"></div>
+        <div
           id="fbvideo"
           class="fb-video disable-click width-500 height-200"
           data-href=""
-          data-width="500"
+          data-width="400"
           data-show-text="false"
           data-allowfullscreen="false"
           data-autoplay="true"
@@ -17,13 +30,12 @@
         ></div>
       </div>
       <br />
-     <br />
-     <a onclick="startvideo()" href="#"></a>
-     </div>
+     <br /><a onclick="startvideo()" href="#"></a></div>
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
             var videoLinks = ["https://www.facebook.com/reel/3677222039207130"];
+            
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -31,11 +43,15 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          },25000); 
+          }, 25000); 
         });
       </script>
 <script type="text/javascript">
-       var my_video_player = {};
+        var brojac = -1;
+        var timprovplay;
+        var videoStarted = false;
+        var watchingFinished = false;
+        var my_video_player = {};
         my_video_player.subscribe = (a, b) => {};
         my_video_player.play = () => {};
 
@@ -43,7 +59,7 @@
           FB.init({
             appId: "{your-app-id}",
             xfbml: true,
-            version: "v3.2",
+            version: "v2.5",
           });
 FB.Event.subscribe("xfbml.ready", function (msg) {
             if (msg.type === "video") {
@@ -60,7 +76,7 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
           }
           js = d.createElement(s);
           js.id = id;
-          js.src = "https://connect.facebook.net/en_US/sdk.js";
+          js.src = "//connect.facebook.net/en_US/sdk.js";
           fjs.parentNode.insertBefore(js, fjs);
         })(document, "script", "facebook-jssdk");
 
@@ -72,8 +88,13 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
             });
           playlink();
           my_video_player.play();}
-        function playlink() { }
-        </script>
+        function counter() {}
+        document.addEventListener("DOMContentLoaded", function (event) {
+          setTimeout(function () {
+            startvideo();
+          }, 1000);
+        });
+        function playlink() { }</script>
       </div>
   </body>
 </html>
