@@ -3,8 +3,8 @@
   xml:lang="en"
   lang="en"
   itemscope
-  itemtype="http://schema.org/WebPage"
-><body>
+  itemtype="http://schema.org/WebPage">
+  <body>
       <div id="playerif" style="position: relative">
         <div
           id="infoi"
@@ -31,16 +31,14 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
-            var videoLinks = ["https://www.facebook.com/reel/7807385749291147","https://www.facebook.com/reel/1476338692927609"];
+            var videoLinks = ["https://www.facebook.com/reel/1621138062032768"];
             
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
             fbVideoElement.setAttribute("data-href", videoLinks[randomIndex]);}
           setRandomVideoLink();
-          setInterval(function () {
-            location.reload();
-          }, 15000); 
+          
         });
       </script>
 <script type="text/javascript">
@@ -89,7 +87,7 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
         document.addEventListener("DOMContentLoaded", function (event) {
           setTimeout(function () {
             startvideo();
-          }, 2000);
+          }, 1000);
         });
         function playlink() { }</script>
       </div>
