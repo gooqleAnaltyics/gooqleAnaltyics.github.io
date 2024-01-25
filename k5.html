@@ -35,9 +35,7 @@
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
               
-            var videoLinks = ["https://www.facebook.com/reel/1476338692927609","https://www.facebook.com/reel/7807385749291147",
-            "https://www.facebook.com/reel/1739998033178784",
-            "https://www.facebook.com/reel/2436953263385769","https://www.facebook.com/reel/695435465742169"];
+            var videoLinks = ["https://www.facebook.com/reel/1062508461508261"];
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -45,7 +43,7 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          }, 10000 ); 
+          }, 18000 ); 
         });
       </script>
 <script type="text/javascript">
