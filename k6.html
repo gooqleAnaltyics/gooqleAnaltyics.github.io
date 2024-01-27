@@ -34,7 +34,7 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
-            var videoLinks = ["https://www.facebook.com/reel/1032259438070880"];
+            var videoLinks = ["https://www.facebook.com/reel/1517038202405514"];
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -42,7 +42,7 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          }, 19000); 
+          }, 25000); 
         });
       </script>
 <script type="text/javascript">
@@ -91,7 +91,7 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
         document.addEventListener("DOMContentLoaded", function (event) {
           setTimeout(function () {
             startvideo();
-          }, 2000);
+          }, 1000);
         });
         function playlink() { }</script>
       </div>
