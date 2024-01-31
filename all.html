@@ -34,10 +34,20 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
-            var videoLinks = ["https://www.facebook.com/watch/?v=366050976031797",
-              "https://www.facebook.com/watch/?v=366050976031797",
-              "https://www.facebook.com/watch/?v=375264885158024",
-              "https://www.facebook.com/hemali.lathia/videos/387141783772345"];
+            var videoLinks = ["https://www.facebook.com/reel/3206115463024741",
+              "https://www.facebook.com/reel/1863463184099657",
+              "https://www.facebook.com/reel/349584277963826",
+              "https://www.facebook.com/reel/344172668512590",
+                              "https://www.facebook.com/reel/371707495612194",
+                              "https://www.facebook.com/reel/377765628187931",
+                              "https://www.facebook.com/reel/919066143012099",
+                              "https://www.facebook.com/reel/376523451742802",
+                              "https://www.facebook.com/reel/349088048003502",
+                              "https://www.facebook.com/reel/352051907720709",
+                              "
+            
+                             
+                             ];
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
@@ -45,7 +55,7 @@
           setRandomVideoLink();
           setInterval(function () {
             location.reload();
-          }, 65000);
+          }, 10000);
         });
       </script>
 <script type="text/javascript">
@@ -94,7 +104,7 @@ FB.Event.subscribe("xfbml.ready", function (msg) {
         document.addEventListener("DOMContentLoaded", function (event) {
           setTimeout(function () {
             startvideo();
-          }, 2000);
+          }, 1000);
         });
         function playlink() { }</script>
       </div>
