@@ -34,7 +34,20 @@
 <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setRandomVideoLink() {
-            var videoLinks = ["https://www.facebook.com/reel/1505840150028988","https://www.facebook.com/reel/1149924783040101","https://www.facebook.com/reel/376324188676969"];
+            var videoLinks = ["https://www.facebook.com/reel/1505840150028988",
+                              "https://www.facebook.com/reel/903713001401499",
+                              "https://www.facebook.com/reel/688269583520581",
+                              "https://www.facebook.com/reel/923178369157019",
+                              "https://www.facebook.com/reel/923178369157019",
+                              "https://www.facebook.com/reel/263849906745728",
+                              "https://www.facebook.com/reel/788307879806402",
+                              "https://www.facebook.com/reel/241632378917527?mibextid=9drbnH&s=yWDuG2&fs=e",
+                              "https://www.facebook.com/reel/1765774270556811?mibextid=9drbnH&s=yWDuG2&fs=e",
+                              "https://www.facebook.com/reel/1306890386649956?mibextid=9drbnH&s=yWDuG2&fs=e",
+                              "https://www.facebook.com/reel/1769710413508697?mibextid=9drbnH&s=yWDuG2&fs=e"
+                             
+                             ];
+            
             var randomIndex = Math.floor(Math.random() * videoLinks.length);
             console.log(randomIndex);
             var fbVideoElement = document.getElementById("fbvideo");
