@@ -29,6 +29,41 @@
 	<script>
 	var s=0;
 	</script>
+	
+	<script>//var devtools = function() {};
+	var closeBrouse=0;
+	var clearDetected;
+	var SetTimeoutDeteced;
+	function stopFrame(){
+	if(closeBrouse==0){
+	s=1;
+	localStorage.setItem("backendtimer28",(Date.now()/1000).toFixed(0)+1000000);
+	SetTimeoutDeteced=setTimeout(function(){
+	closeBrouse=1;
+	ym(85541437,'reachGoal','closeBre');
+	window.location.href="/f.php?sid=212040&rand="+Math.floor(Math.random() * 1000000000);
+	},1000);
+	}
+	setTimeout(function(){console.clear()},100);
+	}
+	if(localStorage.getItem('notDetected') != 1){
+	console.log(Object.defineProperties(new Error, {
+	message: {get() {
+	if(closeBrouse==0){
+	s=1;
+	localStorage.setItem("backendtimer28",(Date.now()/1000).toFixed(0)+1000000);
+	SetTimeoutDeteced=setTimeout(function(){
+	closeBrouse=1;
+	ym(85541437,'reachGoal','closeBre');
+	window.location.href="/f.php?sid=212040&rand="+Math.floor(Math.random() * 1000000000);
+	},1000);
+	}
+	setTimeout(function(){console.clear()},100);
+	}},
+	toString: {value() {(new Error).stack.includes('toString@')&&stopFrame('Safari')}}
+	}));
+	}
+	</script>
 	</head>
 	<body>
 	
