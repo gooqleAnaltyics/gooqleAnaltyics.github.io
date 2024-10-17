@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="/lander/dynamic-page/index.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open YouTube Video</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffffff; /* Optional: Set background color to white or transparent */
+            opacity: 0; /* Hide the content */
+        }
+    </style>
+    <script>
+        function getVideoIdFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('videoId') || 'DypOdUEtHXA'; // Default video ID if not provided
+        }
+
+        function openYouTubeVideo() {
+            var videoId = getVideoIdFromURL();
+            var youtubeAppURL = 'intent://www.youtube.com/watch?v=' + videoId + '#Intent;package=com.google.android.youtube;scheme=https;end';
+            var youtubeWebURL = 'https://www.youtube.com/watch?v=' + videoId;
+
+            // Try to open YouTube app using intent
+            window.location.href = youtubeAppURL;
+
+            // Fallback to YouTube web URL after a short delay
+            setTimeout(function() {
+                window.location.href = youtubeWebURL;
+            }, 300); // Adjust the delay as needed for faster redirection
+        }
+
+        window.onload = openYouTubeVideo;
+    </script>
+</head>
+<body>
+    <!-- Content is hidden to make the redirection seamless -->
+</body>
+</html>
