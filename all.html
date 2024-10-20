@@ -1,55 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><base href="/lander/dynamic-page/index.html">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open YouTube Video</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #ffffff; /* Optional: Set background color to white or transparent */
-            opacity: 0; /* Hide the content */
-        }
-    </style>
-    <script>
-        function getVideoIdFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('videoId') || 'z5JSw-elIyg'; // Default video ID if not provided
-        }
 
-        function openYouTubeVideo() {
-            var videoId = getVideoIdFromURL();
-            var youtubeAppURL = 'intent://www.youtube.com/watch?v=' + videoId + '#Intent;package=com.google.android.youtube;scheme=https;end';
-            var youtubeWebURL = 'https://www.youtube.com/watch?v=' + videoId;
-
-            // Try to open YouTube app using intent
-            window.location.href = youtubeAppURL;
-
-            // Fallback to YouTube web URL after a short delay
-            setTimeout(function() {
-                window.location.href = youtubeWebURL;
-            }, 300); // Adjust the delay as needed for faster redirection
-        }
-
-        window.onload = openYouTubeVideo;
-    </script>
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    html, body { margin: 0; padding: 0; height: 100%; }
+    iframe {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        border: none; padding-top: 32px;
+        box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
-    <!-- Content is hidden to make the redirection seamless -->
+<iframe id="FileFrame" src="about:blank"></iframe>
+<script type="text/javascript">
+    var doc = document.getElementById('FileFrame').contentWindow.document;
+    doc.open();
+    doc.write(
+    '<html>'
++   ' <head>'
++   '   <title></title>'
++   ' </head>'
++   ' <body onload="document.getElementById(\'link\').click();">'
++    '   <a id="link" target="_parent" rel="noreferrer" href="https://trafficmediad.com/3UdxLzO"></a>' 
++   ' </body>'
++   '</html>'
+    );
+    doc.close();
+</script>
 </body>
 </html>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115964255-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-115964255-1');
-</script>
-
