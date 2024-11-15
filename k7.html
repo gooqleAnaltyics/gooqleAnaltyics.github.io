@@ -1,0 +1,54 @@
+<html>
+  <body>
+    <div id="playerif" style="position: relative;">
+      <div id="fbvideo" class="fb-video disable-click" data-href="" data-width="400" data-show-text="false" data-allowfullscreen="false" data-autoplay="true" data-show-captions="false"></div>
+    </div>
+    <br />
+    <a onclick="startVideo()" href="#">Start Video</a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function setRandomVideoLink() {
+          var videoLinks = ["https://facebook.com/watch/?v=3780394438877399"];
+          var randomIndex = Math.floor(Math.random() * videoLinks.length);
+          document.getElementById("fbvideo").setAttribute("data-href", videoLinks[randomIndex]);
+        }
+
+        setRandomVideoLink();
+        
+        // Reload the page every 30 seconds
+        setInterval(function () {
+          location.reload();
+        }, 20000);
+      });
+
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "{your-app-id}",
+          xfbml: true,
+          version: "v2.5",
+        });
+
+        FB.Event.subscribe("xfbml.ready", function (msg) {
+          if (msg.type === "video") {
+            msg.instance.play();
+          }
+        });
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+
+      function startVideo() {
+        var my_video_player = FB.getVideoPlayer();
+        my_video_player.play();
+      }
+    </script>
+  </body>
+</html>
