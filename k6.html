@@ -10,7 +10,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         function setRandomVideoLink() {
-          var videoLinks = ["https://facebook.com/watch/?v=746730977368736"];
+          var videoLinks = ["https://facebook.com/watch/?v=935536481498013"];
           var randomIndex = Math.floor(Math.random() * videoLinks.length);
           document.getElementById("fbvideo").setAttribute("data-href", videoLinks[randomIndex]);
         }
@@ -20,7 +20,7 @@
         // Reload the page every 30 seconds
         setInterval(function () {
           location.reload();
-        }, 25000);
+        }, 15000);
       });
 
       window.fbAsyncInit = function () {
